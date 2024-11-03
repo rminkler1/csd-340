@@ -1,0 +1,63 @@
+/* 
+Robert Minkler
+Module 4.2 Assignment
+Build a Webpage Exercise, Part 4
+Nov. 3, 2024 
+*/
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: rgba(49, 140, 156, 1);
+}
+
+h3 {
+    text-align: center;
+    color: rgba(0, 41, 48, 1);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+figure {
+    text-align: center;
+}
+
+figcaption {
+    font-size: .75em;
+    font-style: italic;
+}
+
+.book-cover {
+    width: 200px;
+    height: 300px;
+}
+
+.card {
+    background-color: rgba(226, 248, 255, 0.5);
+}
+
+#image-gallery {
+    margin-top: 10%;
+    text-align: center;
+    border: 1px solid black;
+    display: grid;
+    gap: 20px 20px;
+    padding: 20px;
+    grid-template-columns: auto auto auto;
+    background-color: rgba(50, 126, 139, 1);
+}
+
+#return-nav {
+    margin-top: 60px;
+    float: right;
+}
+
