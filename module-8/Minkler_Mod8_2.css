@@ -1,0 +1,127 @@
+/* 
+Robert Minkler
+CSD 340 Assignment 8.2
+Build a Webpage Exercise Part 6
+*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+
+header {
+    background-color: #637365;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+a {
+    color: #59331D;
+}
+
+a:visited {
+    color: #BF8969;
+}
+
+a:hover {
+    color: #637365;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+#navbar {
+    overflow: hidden;
+    background-color: #BF8969;
+    border-bottom: 15px solid #59331D;
+}
+#navbar a {
+    text-align: center;
+    float: left;
+    display: block;
+    color: #F2F2F2;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navbar a:hover {
+    background-color: #D9BBA9;
+    color: #59331D;
+}
+
+#container {
+    margin: 2% 5% 100px 5%;
+    padding: 10px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+    width: 50%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    text-align: center;
+    font-size: 2em;
+    color: #637365;
+    font-weight: 400;
+    padding: 16px 10px 2px 10px;
+}
+
+.card-content {
+    padding: 2px 16px;
+}
+
+footer {
+    color: #F2F2F2;
+    background-color: #637365;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    float: right;
+    font-style: italic;
+    padding-right: 10px;
+    font-weight: 400;
+}
+
+footer a, footer a:visited {
+    color: #F2F2F2;
+    text-decoration: none;
+}
+
+footer a:hover, footer a:active {
+    color: #D9BBA9;
+    text-decoration: underline;
+}
+
+#movies {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#movies th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}
+
+#movies td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#copyright {
+    float: left;
+    padding: 15px 10px 10px 10px;
+}
