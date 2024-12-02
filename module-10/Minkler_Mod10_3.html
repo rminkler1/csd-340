@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<!--
+Robert Minkler
+Module 10.3 Assignment
+JavaScript Exercise, Part 2
+Dec 1, 2024
+-->
+
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      h1 {
+        width: 100%;
+        padding: 10px;
+        background-color: darkmagenta;
+        color: lightpink;
+        border-top: 25px solid lightskyblue;
+      }
+    </style>
+    <script>
+      // once page has loaded add an event listener to the image
+      window.onload = function () {
+        document
+          .getElementById("dells")
+          .addEventListener("click", changeDellsImage);
+      };
+
+      // Flip image between real photo and forrest version
+      function changeDellsImage() {
+        // assign dells image to a variable
+        let dellsImage = document.getElementById("dells");
+
+        // check source file of dells and assign a new image
+        // based on what is currently shown.
+        // use regex to pull filename after last slash
+        if (dellsImage.src.match("[^/]*$")[0] == "dells1.jpg") {
+          // change image source
+          dellsImage.src = "dells2.jpg";
+
+          // change alt text
+          dellsImage.alt =
+            "The Prescott Dells transformed into a forrest lake.";
+
+          // change h1 top border color
+          document.getElementsByTagName("h1")[0].style.borderColor = "orange";
+        } else {
+          // change image source
+          dellsImage.src = "dells1.jpg";
+
+          // change alt text
+          dellsImage.alt = "Sunset in the Dells in Prescott Arizona.";
+
+          // change h1 top border color
+          document.getElementsByTagName("h1")[0].style.borderColor =
+            "lightskyblue";
+        }
+      }
+
+      // change h1 text and bg color
+      function bgToMagenta() {
+        document.getElementsByTagName("h1")[0].style.backgroundColor =
+          "darkmagenta";
+        document.getElementsByTagName("h1")[0].style.color = "lightpink";
+      }
+
+      // change h1 text and bg color
+      function bgToPink() {
+        document.getElementsByTagName("h1")[0].style.backgroundColor =
+          "lightpink";
+        document.getElementsByTagName("h1")[0].style.color = "darkmagenta";
+      }
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="This is an assignment website for CSD-340 at Bellevue University for Robert Minkler"
+    />
+    <meta
+      name="keywords"
+      content="Bellevue, University, Assignment, Robert, Minkler, HTML, CSS, 340, JavaScript"
+    />
+    <meta name="robots" content="nofollow" />
+    <meta http-equiv="author" content="Robert Minkler" />
+
+    <link rel="stylesheet" href="Minkler_Mod2_2.css" type="text/css" />
+
+    <title>CSD 340 Web Development with HTML and CSS</title>
+  </head>
+  <body>
+    <figure>
+      <h1 onmouseover="bgToPink()" onmouseout="bgToMagenta()">
+        Assignment 10.3: JavaScript - Part 2
+      </h1>
+      <img
+        src="dells1.jpg"
+        id="dells"
+        alt="Sunset in the Dells in Prescott Arizona."
+      />
+      <figcaption>
+        Click on the image to see the Prescott Dells transform into a forrest
+        and back.
+      </figcaption>
+    </figure>
+  </body>
+</html>
