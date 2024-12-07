@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<!--
+Robert Minkler
+Module 11.2 Assignment
+JavaScript Exercise, Part 3
+Dec 7, 2024
+-->
+
+<!-- SVG code from Bootstrap Icons -->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This is an assignment website for CSD-340 at Bellevue University for Robert Minkler"
+    />
+    <meta
+      name="keywords"
+      content="Bellevue, University, Assignment, Robert, Minkler, HTML, CSS, 340, JavaScript"
+    />
+    <meta name="robots" content="nofollow" />
+    <meta name="author" content="Robert Minkler" />
+
+    <script>
+      // After page load, add a submit listener to the form that calls addElement
+      window.onload = function () {
+        document
+          .getElementById("todoForm")
+          .addEventListener("submit", addElement);
+      };
+
+      // create empty array to store the list
+      let listItems = [];
+
+      function addElement(event) {
+        // prevent browser from reloading on submit
+        event.preventDefault();
+
+        // get text Input value
+        let element = document.getElementById("textInput").value;
+
+        // add element to the array
+        listItems.push(element);
+
+        // Alert the user indicating what was added to the list and where
+        alert(
+          "Items: " +
+            element +
+            " was added to the list at position " +
+            listItems.length
+        );
+      }
+
+      function deleteElement() {
+        if (listItems.length == 0) {
+          // alert the user that the list is empty
+          alert("The list is empty. Nothing to remove.");
+        } else {
+          // remove the last item from the list and alert the user
+          let itemRemoved = listItems.pop();
+          displayElements();
+        }
+      }
+
+      // Display elements in the array
+      function displayElements() {
+        let outputString = "";
+
+        // build the output string using foreach() to loop through each array entry
+        listItems.forEach(function (item, index) {
+          outputString =
+            outputString + "Item: " + ++index + " = " + item + "<br />";
+        });
+
+        // Place the output string in the placeholder
+        document.getElementById("output").innerHTML = outputString;
+      }
+    </script>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+
+      /* Form title and padding */
+      fieldset {
+        padding: 30px;
+        margin: 50px;
+        font-weight: 600;
+        width: fit-content;
+      }
+
+      legend {
+        font-size: 1.4em;
+        padding: 0 20px 0 20px;
+      }
+
+      /* Begin Form alignment and formatting */
+      button {
+        background-color: #eeeeee;
+      }
+      button:hover {
+        background-color: #cccccc;
+      }
+
+      .array-form {
+        margin: 10px 10px 0 0;
+        padding: 10px;
+        width: 192px;
+        height: 30px;
+        box-sizing: content-box;
+        border: 1px solid #777777;
+        border-radius: 10px;
+      }
+
+      .form-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+
+      #textInput {
+        border-radius: 10px 0px 0px 10px;
+        margin-right: 0px;
+        border-right: 0px;
+        width: 200px;
+      }
+
+      #Add {
+        border-radius: 0px 10px 10px 0px;
+        margin-left: 0px;
+        width: 200px;
+      }
+      /* End Form alignment and formatting */
+
+      /* Text Formatting */
+      h1 {
+        padding: 50px 10px 10px 30px;
+        margin: 0;
+        background-color: darkcyan;
+        color: #eeeeee;
+        border-bottom: 5px solid teal;
+      }
+
+      /* Output text placement */
+      #output {
+        margin: 20px 30px 20px 30px;
+      }
+
+      /* Return navigation link */
+      #return-nav {
+        margin: 60px 0 10px 0;
+        float: right;
+      }
+    </style>
+
+    <title>CSD 340 Web Development with HTML and CSS</title>
+  </head>
+  <body>
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+    <form id="todoForm">
+      <fieldset>
+        <legend>Add Items to The List</legend>
+
+        <label for="text">Enter an item to add:</label><br />
+
+        <!-- add button with svg graphic begins here -->
+
+        <div class="form-row">
+          <input
+            class="array-form"
+            id="textInput"
+            type="text"
+            placeholder="Item"
+          />
+          <button class="array-form" type="submit" id="Add">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-bookmark-plus"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"
+              />
+              <path
+                d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4"
+              />
+            </svg>
+            Add Entry
+          </button>
+        </div>
+        <br />
+        <div>
+          <!-- delete button with svg graphic begins here -->
+
+          <button
+            class="array-form"
+            id="delete"
+            type="button"
+            onclick="deleteElement()"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-bookmark-x"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6.146 5.146a.5.5 0 0 1 .708 0L8 6.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 7l1.147 1.146a.5.5 0 0 1-.708.708L8 7.707 6.854 8.854a.5.5 0 1 1-.708-.708L7.293 7 6.146 5.854a.5.5 0 0 1 0-.708"
+              />
+              <path
+                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"
+              />
+            </svg>
+            Delete Last Entry
+          </button>
+
+          <!-- display button with svg graphic begins here -->
+
+          <button
+            class="array-form"
+            id="display"
+            type="button"
+            onclick="displayElements()"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-cast"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="m7.646 9.354-3.792 3.792a.5.5 0 0 0 .353.854h7.586a.5.5 0 0 0 .354-.854L8.354 9.354a.5.5 0 0 0-.708 0"
+              />
+              <path
+                d="M11.414 11H14.5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5h-13a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5h3.086l-1 1H1.5A1.5 1.5 0 0 1 0 10.5v-7A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v7a1.5 1.5 0 0 1-1.5 1.5h-2.086z"
+              />
+            </svg>
+            Display All Items
+          </button>
+        </div>
+      </fieldset>
+    </form>
+
+    <!-- Placeholder for output -->
+    <div id="output"></div>
+
+    <!-- Return to Home Page -->
+    <div id="return-nav"><a href="../">Back to Landing Page</a></div>
+  </body>
+</html>
