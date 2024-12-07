@@ -63,6 +63,10 @@ body {
     border-bottom: 5px solid teal;
   }
 
+  p {
+    padding: 30px 50px 10px 50px;
+  }
+
   /* Output text placement */
   #output {
     margin: 20px 30px 20px 30px;
