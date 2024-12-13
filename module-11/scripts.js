@@ -1,60 +1,65 @@
+// Robert Minkler
+// Module 11.2 Assignment
+// JavaScript Exercise, Part 3
+// Dec 12, 2024
 
-      // After page load, add a submit listener to the form that calls addElement
-      window.onload = function () {
-        document
-          .getElementById("todoForm")
-          .addEventListener("submit", addElement);
-      };
 
-      // create empty array to store the list
-      let listItems = [];
+// After page load, add a submit listener to the form that calls addElement
+window.onload = function () {
+  document
+    .getElementById("todoForm")
+    .addEventListener("submit", addElement);
+};
 
-      function addElement(event) {
+// create empty array to store the list
+let listItems = [];
 
-        // prevent browser from reloading on submit
-        event.preventDefault();
+function addElement(event) {
 
-        // get text Input value
-        let element = document.getElementById("textInput").value;
+  // prevent browser from reloading on submit
+  event.preventDefault();
 
-        // add element to the array
-        listItems.push(element);
+  // get text Input value
+  let element = document.getElementById("textInput").value;
 
-        // Alert the user indicating what was added to the list and where
-        alert(
-          "Items: " +
-            element +
-            " was added to the list at position " +
-            listItems.length
-        );
-      }
+  // add element to the array
+  listItems.push(element);
 
-      function deleteElement() {
-        if (listItems.length == 0) {
+  // Alert the user indicating what was added to the list and where
+  alert(
+    "Items: " +
+      element +
+      " was added to the list at position " +
+      listItems.length
+  );
+}
 
-          // alert the user that the list is empty
-          alert("The list is empty. Nothing to remove.");
+function deleteElement() {
+  if (listItems.length == 0) {
 
-        } else {
+    // alert the user that the list is empty
+    alert("The list is empty. Nothing to remove.");
 
-          // remove the last item from the list and alert the user
-          let itemRemoved = listItems.pop();
-          displayElements();
-        }
-      }
+  } else {
 
-      // Display elements in the array
-      function displayElements() {
+    // remove the last item from the list and alert the user
+    let itemRemoved = listItems.pop();
+    displayElements();
+  }
+}
 
-        // start with an empty string
-        let outputString = "";
+// Display elements in the array
+function displayElements() {
 
-        // build the output string using foreach() to loop through each array entry
-        listItems.forEach(function (item, index) {
-          outputString =
-            outputString + "Item: " + ++index + " = " + item + "<br />";
-        });
+  // start with an empty string
+  let outputString = "";
 
-        // Place the output string in the placeholder div
-        document.getElementById("output").innerHTML = outputString;
-      }
+  // build the output string using foreach() to loop through each array entry
+  listItems.forEach(function (item, index) {
+    outputString =
+      outputString + "Item: " + ++index + " = " + item + "<br />";
+  });
+
+  // Place the output string in the placeholder div
+  document.getElementById("output").innerHTML = outputString;
+}
