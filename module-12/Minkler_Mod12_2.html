@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<!--
+Robert Minkler
+Module 12.2 Assignment
+JavaScript - Part 4
+Dec. 17, 2024
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="description"
+      content="This is an assignment website for CSD-340 at Bellevue University for Robert Minkler"
+    />
+    <meta
+      name="keywords"
+      content="Bellevue, University, Assignment, Robert, Minkler, HTML, CSS, 340"
+    />
+    <meta name="robots" content="nofollow" />
+    <meta name="author" content="Robert Minkler" />
+
+    <link rel="stylesheet" href="Minkler_Mod12_3.css" type="text/css" />
+
+    <script src="Minkler_Mod12_script.js"></script>
+
+    <title>CSD 340 Web Development with HTML and CSS</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <h1>Assignment 12.2: JavaScript - Part 4</h1>
+
+      <div id="side-by-side-container">
+        <div class="side-by-side" id="left-div">
+          <h3>Top 10 Favorite Books</h3>
+
+          <!-- Buttons to display the list -->
+          <button
+            type="button"
+            name="top"
+            onclick="display_top_down(book_list)"
+          >
+            &downarrow; Top to Bottom
+          </button>
+          <button
+            type="button"
+            name="bottom"
+            onclick="display_bot_down(book_list)"
+          >
+            &uparrow; Bottom to Top
+          </button>
+          <hr />
+
+          <!-- Empty List awaiting content -->
+          <ol id="books"></ol>
+        </div>
+
+        <div class="side-by-side" id="right-div">
+          <h3>5 Things I&apos;ve Learned Since the Course Started</h3>
+
+          <ul>
+            <li>
+              People can only hold about four things in short term memory,
+              rather than 7.
+            </li>
+            <li>I can define colors using rgb() or hsv().</li>
+            <li>How to properly use label tags in forms.</li>
+            <li>
+              CSS is able to transform text to uppercase, lowercase, or
+              capitalize.
+            </li>
+            <li>HTML tables can have headers.</li>
+          </ul>
+        </div>
+      </div>
+      <div id="last-div">
+        <a href="../">Back to Landing Page</a>
+      </div>
+    </div>
+  </body>
+</html>

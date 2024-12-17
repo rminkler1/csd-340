@@ -1,0 +1,67 @@
+/* 
+Robert Minkler
+Module 3.3 Assignment
+Build a Webpage Exercise, Part 3
+Oct. 29, 2024 
+*/
+
+body {
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+li {
+    font-weight: 300;
+}
+
+ul {
+    list-style: upper-roman;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.side-by-side {
+    width: 45%;
+    padding: 10px;
+    margin: 10px 1%;
+    border-radius: 15px;
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
+}
+
+#left-div {
+    border: 1px solid red;
+}
+
+#right-div {
+    border: 1px dashed red;
+}
+
+#side-by-side-container {
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+#last-div {
+    width: 100%;
+    margin-top: 60%;
+    margin-bottom: 20px;
+    display: block;
+    float: right;
+    text-align: right;
+}
